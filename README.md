@@ -112,7 +112,7 @@ HTML, CSS, Bootstrap
 Chart.js (optional)
 
 📦 Installation
-git clone https://github.com/YOUR_USERNAME/azubi_budget_manager.git
+git clone https://github.com/Kasra7r/azubi_budget_manager.git
 cd azubi_budget_manager
 python -m venv venv
 venv\Scripts\activate
