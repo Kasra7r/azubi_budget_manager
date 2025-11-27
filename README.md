@@ -1,221 +1,138 @@
-Azubi Budget Manager
-Personal Finance & Budget Tracking App for Apprentices (Azubis)
-Web-Anwendung zur Verwaltung persönlicher Finanzen für Auszubildende
-
+📘 Azubi Budget Manager
+Personal Finance & Budget Tracking App for Apprentices
+Persönliches Finanz- & Budget-Management für Auszubildende
 🇩🇪 Deutsch
 📌 Über das Projekt
 
-Der Azubi Budget Manager ist eine vollständige Web-Anwendung, die Auszubildenden hilft, ihre persönlichen Finanzen zu organisieren.
-Benutzer können Einnahmen, Ausgaben, Kategorien und monatliche Budgets verwalten und erhalten im Dashboard eine übersichtliche Darstellung ihrer finanziellen Situation.
-
-Dieses Projekt wurde im Rahmen der Vorbereitung auf eine Ausbildung zum
-Fachinformatiker Anwendungsentwicklung entwickelt.
+Der Azubi Budget Manager ist eine Web-Anwendung, die Auszubildenden hilft, ihre Finanzen zu verwalten.
+Mit Login-System, Kategorien, Einnahmen/Ausgaben, monatlichen Budgets und einem übersichtlichen Dashboard.
 
 🚀 Funktionen
-✔ Benutzer-Registrierung & Login
 
-Sichere Passwort-Hashing (Flask-Bcrypt)
+Benutzer-Registrierung & Login (Flask-Login, Bcrypt)
 
-Login geschützte Bereiche (Flask-Login)
+Einnahmen & Ausgaben verwalten
 
-✔ Einnahmen & Ausgaben
+Kategorien für Einkommen/Ausgaben
 
-Erstellen, Auflisten, Kategorisieren
+Monatliche Budgets pro Kategorie
 
-Beschreibung, Datum, Typ (income/expense)
-
-✔ Kategorien
-
-Kategorien für Ausgaben & Einnahmen
-
-z. B. Miete, Lebensmittel, Ticket, Freizeit, Vergütung
-
-✔ Monatliche Budgets
-
-Budget pro Kategorie festlegen
-
-Dashboard zeigt: Budget, Ausgegeben, Restbetrag
-
-Warnung bei Überschreitung (roter Text)
-
-✔ Dashboard
+Dashboard mit:
 
 Gesamt-Einnahmen
 
 Gesamt-Ausgaben
 
-Aktuelle Balance
+Balance
 
-Budgetübersicht des aktuellen Monats
+Budgetübersicht
 
-(optional erweiterbar mit Diagrammen)
+SQLite-Datenbank (SQLAlchemy)
+
+Bootstrap UI
 
 🛠 Technologien
 
-Python 3
+Python, Flask
 
-Flask
+SQLAlchemy (SQLite)
 
-Flask-SQLAlchemy (SQLite)
+Flask-Login, Flask-Bcrypt
 
-Flask-Login & Flask-Bcrypt
-
-HTML, CSS, Bootstrap 5
+HTML, CSS, Bootstrap
 
 Chart.js (optional)
 
-📦 Installation & Start
-# Repository klonen
-git clone https://github.com/DEIN_USERNAME/azubi_budget_manager.git
+📦 Installation
+git clone https://github.com/Kasra7r/azubi_budget_manager.git
 cd azubi_budget_manager
-
-# Virtuelle Umgebung erstellen
 python -m venv venv
-venv\Scripts\activate   # Windows
-
-# Abhängigkeiten installieren
+venv\Scripts\activate
 pip install -r requirements.txt
-
-# Anwendung starten
 python app.py
 
 
-Dann öffnen:
-👉 http://127.0.0.1:5000
+Öffnen im Browser:
+http://127.0.0.1:5000
 
 🗂 Benutzung
 
-Unter /register ein neues Benutzerkonto erstellen
+Konto unter /register erstellen
 
-Unter /login einloggen
+Login unter /login
 
 Kategorien anlegen
 
 Einnahmen/Ausgaben hinzufügen
 
-Monatliche Budgets zuweisen
+Budgets für Kategorien festlegen
 
 Dashboard ansehen
-
-🎯 Ziel des Projekts
-
-Dieses Projekt zeigt:
-
-Verständnis von Web-Entwicklung mit Flask
-
-Umgang mit Datenbanken (SQLAlchemy)
-
-Implementierung von Login-Systemen
-
-Strukturierung von Templates & Routen
-
-Planung einer vollständigen Anwendung
 
 🇬🇧 English
 📌 About the Project
 
-The Azubi Budget Manager is a complete web application designed to help apprentices (Azubis) manage their personal finances efficiently.
-Users can track income, expenses, categories, and monthly budgets, and visualize everything in a clean and simple dashboard.
-
-This project was created as part of my preparation for an apprenticeship as a
-Software Developer (Fachinformatiker Anwendungsentwicklung).
+The Azubi Budget Manager is a web application that helps apprentices manage their personal finances.
+It includes login, categories, income/expenses, monthly budgets, and a clear dashboard.
 
 🚀 Features
-✔ User Registration & Login
 
-Secure password hashing (Flask-Bcrypt)
+User registration & login (Flask-Login, Bcrypt)
 
-Login-protected pages (Flask-Login)
+Track income & expenses
 
-✔ Income & Expense Tracking
+Create categories (income/expense)
 
-Add, list, organize by category
+Set monthly budgets
 
-Description, date, type (income/expense)
+Dashboard showing:
 
-✔ Categories
-
-Create expense & income categories
-
-Examples: Rent, Food, Transport, Leisure, Salary
-
-✔ Monthly Budgets
-
-Set monthly budgets per category
-
-Dashboard shows: limit, spent, remaining
-
-Highlight when budget exceeded
-
-✔ Dashboard
-
-Total incomes
+Total income
 
 Total expenses
 
-Current balance
+Balance
 
-Monthly budget summary
+Budget overview
 
-(Can be extended with charts)
+SQLite database (SQLAlchemy)
+
+Bootstrap UI
 
 🛠 Tech Stack
 
-Python 3
+Python, Flask
 
-Flask
+SQLAlchemy (SQLite)
 
-Flask-SQLAlchemy (SQLite)
+Flask-Login, Flask-Bcrypt
 
-Flask-Login & Flask-Bcrypt
-
-HTML, CSS, Bootstrap 5
+HTML, CSS, Bootstrap
 
 Chart.js (optional)
 
-📦 How to Install & Run
-# Clone the repository
+📦 Installation
 git clone https://github.com/YOUR_USERNAME/azubi_budget_manager.git
 cd azubi_budget_manager
-
-# Create virtual environment
 python -m venv venv
-venv\Scripts\activate   # Windows
-
-# Install dependencies
+venv\Scripts\activate
 pip install -r requirements.txt
-
-# Start the app
 python app.py
 
 
 Open in browser:
-👉 http://127.0.0.1:5000
+http://127.0.0.1:5000
 
 🗂 How to Use
 
-Register a new user via /register
+Register (/register)
 
-Log in via /login
+Log in (/login)
 
 Create categories
 
-Add income and expenses
+Add income/expenses
 
 Set monthly budgets
 
-View everything on the dashboard
-
-🎯 Purpose of This Project
-
-This project demonstrates:
-
-Understanding of backend development with Flask
-
-Database modeling with SQLAlchemy
-
-Secure authentication concepts
-
-Clean template and routing structure
-
-Ability to design a complete, useful application
+View dashboard
