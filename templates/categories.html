@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4">Kategorien</h1>
+
+<div class="row">
+  <div class="col-md-4 mb-4">
+    <div class="card p-3 shadow-sm">
+      <h5 class="mb-3">Neue Kategorie</h5>
+      <form method="post">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Typ</label>
+          <select name="type" class="form-select" required>
+            <option value="expense">Ausgabe</option>
+            <option value="income">Einnahme</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Speichern</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card p-3 shadow-sm">
+      <h5 class="mb-3">Vorhandene Kategorien</h5>
+      <table class="table table-striped table-sm align-middle">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Typ</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for cat in categories %}
+          <tr>
+            <td>{{ cat.name }}</td>
+            <td>
+              {% if cat.type == 'income' %}
+                <span class="badge bg-success">Einnahme</span>
+              {% else %}
+                <span class="badge bg-danger">Ausgabe</span>
+              {% endif %}
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="2" class="text-center text-muted">Noch keine Kategorien.</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

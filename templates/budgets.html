@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4">Budgets</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card p-3 shadow-sm mb-4">
+      <h5 class="mb-3">Neues Budget</h5>
+      <form method="post">
+        <div class="mb-3">
+          <label class="form-label">Monat</label>
+          <input type="number" name="month" min="1" max="12" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Jahr</label>
+          <input type="number" name="year" value="{{ current_year or 2025 }}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Kategorie</label>
+          <select name="category_id" class="form-select" required>
+            {% for cat in categories %}
+            <option value="{{ cat.id }}">{{ cat.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Betrag (€)</label>
+          <input type="number" step="0.01" name="amount" class="form-control" required>
+        </div>
+
+        <button class="btn btn-primary w-100">Speichern</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card p-3 shadow-sm">
+      <h5 class="mb-3">Bestehende Budgets</h5>
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th>Monat</th>
+            <th>Kategorie</th>
+            <th>Betrag</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for b in budgets %}
+          <tr>
+            <td>{{ b.month }}.{{ b.year }}</td>
+            <td>{{ b.category.name }}</td>
+            <td>{{ "%.2f" | format(b.amount) }} €</td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="3" class="text-center text-muted">Noch keine Budgets.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4">Dashboard</h1>
+
+<div class="row mb-4">
+  <div class="col-md-4 mb-3">
+    <div class="card p-3 shadow-sm">
+      <h5>Einnahmen (gesamt)</h5>
+      <p class="fs-4 mb-0">{{ incomes }} €</p>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card p-3 shadow-sm">
+      <h5>Ausgaben (gesamt)</h5>
+      <p class="fs-4 mb-0">{{ expenses }} €</p>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card p-3 shadow-sm">
+      <h5>Balance</h5>
+      <p class="fs-4 mb-0 {% if balance < 0 %}text-danger{% else %}text-success{% endif %}">
+        {{ balance }} €
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="card p-3 shadow-sm mb-4">
+  <h5>Budgetübersicht ({{ current_month }}/{{ current_year }})</h5>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Kategorie</th>
+        <th>Budget</th>
+        <th>Ausgegeben</th>
+        <th>Rest</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for b in budget_info %}
+      <tr>
+        <td>{{ b.category }}</td>
+        <td>{{ "%.2f"|format(b.limit) }} €</td>
+        <td>{{ "%.2f"|format(b.spent) }} €</td>
+        <td class="{% if b.remaining < 0 %}text-danger{% endif %}">
+          {{ "%.2f"|format(b.remaining) }} €
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="4" class="text-muted text-center">
+          Noch keine Budgets für diesen Monat festgelegt.
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
