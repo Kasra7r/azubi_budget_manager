@@ -1,11 +1,16 @@
 📘 Azubi Budget Manager
 Personal Finance & Budget Tracking App for Apprentices
+
 Persönliches Finanz- & Budget-Management für Auszubildende
+
 🇩🇪 Deutsch
+
 📌 Über das Projekt
 
 Der Azubi Budget Manager ist eine Web-Anwendung, die Auszubildenden hilft, ihre Finanzen zu verwalten.
 Mit Login-System, Kategorien, Einnahmen/Ausgaben, monatlichen Budgets und einem übersichtlichen Dashboard.
+
+📸 Screenshot: https://github.com/Kasra7r/azubi_budget_manager/issues/1#issue-3676641201
 
 🚀 Funktionen
 
